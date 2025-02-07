@@ -1,0 +1,7 @@
+# Ignore les fichiers de l'environnement virtuel
+venv/
+
+# Ignore les fichiers générés automatiquement par Python
+__pycache__/
+*.pyc
+*.pyo
