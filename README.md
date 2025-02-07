@@ -20,3 +20,8 @@
     ```
     pip install -r requirements.txt
     ```
+
+4. **Lancer le script**
+    ```
+    python main.py
+    ```
