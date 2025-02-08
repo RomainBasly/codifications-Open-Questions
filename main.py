@@ -8,7 +8,7 @@ CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
 
 def read_csv_to_extract_verbatim():
     for row in CHARGED_FILE.itertuples():
-        print("verbatim", row[9])
+        print("verbatim", row.review_text)
 
 def generate_llm_answer():
     prompt = "What is the Ultimate Answer to Life, The Universe, and Everything"
