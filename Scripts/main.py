@@ -8,10 +8,13 @@ API_URL = "http://127.0.0.1:5000/v1/completions"
 CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0bis.csv"
 
 CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
-PROMPT = load("v1")
+PROMPT = load("v2")
 
-def process_verbatim_and_extract_new_codes():
+def process_verbatims_and_extract_csv():
     max_columns = 12
+
+    if "Analysis" not in CHARGED_FILE.columns:
+        CHARGED_FILE["Analysis"] = pandas.Series([np.nan] * len(CHARGED_FILE), dtype="object")
 
     for i in range(1, 13):
         if f"review_{i}" not in CHARGED_FILE.columns:
@@ -24,6 +27,7 @@ def process_verbatim_and_extract_new_codes():
         answer = generate_llm_answer(verbatim)
         print("answer of the LLM", answer)
         codes_list = extract_code_response(answer)
+        CHARGED_FILE.at[index, "Analysis"] = answer
 
         for i in range(max_columns):
             if i < len(codes_list):
@@ -69,7 +73,7 @@ def generate_llm_answer(verbatim):
     else: 
         print(f"Erreur {response.status_code}: {response.text}")
 
-process_verbatim_and_extract_new_codes()
+process_verbatims_and_extract_csv()
 
     
 
