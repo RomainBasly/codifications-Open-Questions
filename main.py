@@ -2,16 +2,18 @@ import requests
 import pandas
 
 API_URL = "http://127.0.0.1:5000/v1/completions"
-CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-1.csv"
+CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0.csv"
 
 CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
 
 def read_csv_to_extract_verbatim():
     for row in CHARGED_FILE.itertuples():
-        print("verbatim", row.review_text)
+        print(row)
+        verbatim = row.review_text
+        generate_llm_answer(verbatim)
 
-def generate_llm_answer():
-    prompt = "What is the Ultimate Answer to Life, The Universe, and Everything"
+def generate_llm_answer(verbatim):
+    prompt = f"It is the {verbatim} you need to analyze. It is an amazon review and the individual talks about a dress? Please sum it up"
 
     payload = {
         "prompt": prompt,
