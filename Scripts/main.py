@@ -1,22 +1,24 @@
 import requests
 import pandas
+from prompts_loader import load
 
 API_URL = "http://127.0.0.1:5000/v1/completions"
-CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0.csv"
+CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0bis.csv"
 
 CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
+PROMPT = load("v1")
 
-def read_csv_to_extract_verbatim():
+def process_verbatim():
     for row in CHARGED_FILE.itertuples():
         print(row)
         verbatim = row.review_text
         generate_llm_answer(verbatim)
 
 def generate_llm_answer(verbatim):
-    prompt = f"It is the {verbatim} you need to analyze. It is an amazon review and the individual talks about a dress? Please sum it up"
+    formatted_prompt = PROMPT.format(verbatim=verbatim)
 
     payload = {
-        "prompt": prompt,
+        "prompt": formatted_prompt,
         "max_tokens": 500,
         "temperature": 0.1,
     }
@@ -30,7 +32,7 @@ def generate_llm_answer(verbatim):
     else: 
         print(f"Erreur {response.status_code}: {response.text}")
 
-read_csv_to_extract_verbatim()
+process_verbatim()
 
     
 
