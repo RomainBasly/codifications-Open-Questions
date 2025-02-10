@@ -6,7 +6,7 @@ CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0.csv"
 
 CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
 
-def read_csv_to_extract_verbatim():
+def read_csv_to_interpret_verbatim():
     for row in CHARGED_FILE.itertuples():
         print(row)
         verbatim = row.review_text
@@ -30,7 +30,7 @@ def generate_llm_answer(verbatim):
     else: 
         print(f"Erreur {response.status_code}: {response.text}")
 
-read_csv_to_extract_verbatim()
+read_csv_to_interpret_verbatim()
 
     
 
