@@ -39,7 +39,7 @@ def process_verbatims_and_extract_csv():
             else: 
                 CHARGED_FILE.at[index, f"review_{i+1}"]  = np.nan
 
-    output_file = "scripts/new.csv"
+    output_file = "Prompts/Outputs/new.csv"
     CHARGED_FILE.to_csv(output_file, index=False, sep=";")
     print(f"Updated CSV saved to: {output_file}")
 
