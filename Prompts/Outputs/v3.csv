@@ -1,0 +1,18 @@
+s.no;age;department_name;class_name;clothing_id;alike_feedback_count;rating;recommend_index ;review_text;Analysis;review_1;review_2;review_3;review_4;review_5;review_6;review_7;review_8;review_9;review_10;review_11;review_12
+632;60;Tops;Blouses;815;1;5;1;Very soft color and soft to touch. the material is light and airy and it feels great on. i wear a medium and bought the small. i would definitely buy this in another pattern if they made it as cute as the flamingos.;"Final codes: [3, 2, 4, 7, 98]
+Analysis:
+- ""Very soft color and soft to touch"" → code [3] (Enjoying product characteristic)
+- ""the material is light and airy and it feels great on"" → code [3] (Enjoying product characteristic)
+- ""i wear a medium and bought the small"" → code [4] (Concern/disappointment)
+- ""i would definitely buy this in another pattern if they made it as cute as the flamingos"" → code [2] (Positive feeling)
+- ""if they made it as cute as the flamingos"" → code [98] (Other) (This is a suggestion for a future product, not a concern about the current one)";3;2;4;7;98;;;;;;;
+1096;25;Tops;Blouses;815;0;3;0;"The lace on this top is pretty, and i liked the way it was styled in the product photos, but did nothing for me on. between the loose sleeves and the boxy cut of the front, it just sort of hung shapelessly on me. i also found the back to be much shorter than 30.5""--it came to a few inches below my hips and was not tunic length like i expected. the shoulders fit me well, and because the top was boxy already, i didn't want to size up for length. for reference i tried on xs (i'm 5'4"", 120 lbs).";"Final codes: [2, 4, 7]
+Analysis:
+- ""The lace on this top is pretty"" → code [2] (Positive feeling)
+- ""did nothing for me on"" → code [4] (Concern/disappointment)
+- ""i found the back to be much shorter than 30.5"" → code [7] (Issue with size)";2;4;7;;;;;;;;;
+1838;37;Tops;Blouses;815;0;5;1;I really love this top! it is soft, lightweight, and really pretty. it has quickly become one of my favorites!;"Final codes: [2, 3, 4]
+Analysis:
+- ""really love this top!"" → code [2] (positive feeling)
+- ""it is soft, lightweight, and really pretty"" → code [3] (enjoying product characteristic)
+- ""it has quickly become one of my favorites!"" → code [4] (positive feeling)";2;3;4;;;;;;;;;

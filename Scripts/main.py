@@ -8,7 +8,7 @@ API_URL = "http://127.0.0.1:5000/v1/completions"
 CSV_URL = "Data/first-iterations/Amazon-global-dresses-sample50-0bis.csv"
 
 CHARGED_FILE = pandas.read_csv(CSV_URL, delimiter=";")
-PROMPT = load("v2")
+PROMPT = load("v3")
 
 def process_verbatims_and_extract_csv():
     max_columns = 12
