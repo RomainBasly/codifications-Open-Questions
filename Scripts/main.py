@@ -44,7 +44,7 @@ def process_verbatims_and_extract_csv():
     print(f"Updated CSV saved to: {output_file}")
 
 def extract_code_response(model_reply):
-    match = re.search(r"Expected_Answer\s*:\s*(\[[^\]]*])", model_reply)
+    match = re.search(r"Final Codes\s*:\s*(\[[^\]]*])", model_reply)
     if match:
         response_str = match.group(1)
         print("response_str in first part", response_str)
